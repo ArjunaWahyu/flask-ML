@@ -1,4 +1,5 @@
 # flask-ML
 
-Nama | NIM
+Nama | NIM 
+--------------------|---------------
 Arjuna Wahyu Kusuma | 24060120130081
