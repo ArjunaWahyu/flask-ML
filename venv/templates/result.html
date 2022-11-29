@@ -27,17 +27,17 @@
         </a>
 
         <h3 class="pt-4 text-xl text-center">Hi, {{name}} 👋.</h3>
-        <h3 class="text-2xl text-center">Exam Result</h3>
+        <h3 class="text-2xl text-center">Test Result</h3>
         <div class="flex justify-center">
           <img
             src="{{ url_for('static', filename='img/result.jpg') }}"
             alt="result"
-            class="w-96"
+            class="w-96 mb-2"
           />
         </div>
         <h2
-          class="text-center text-bold text-white text-xl p-4 mx-16 rounded-lg"
-          style="background-color: #00CAC7;"
+          class="text-center text-bold text-gray-700 text-xl p-4 mx-16 rounded-lg"
+          style="background-color: #FFCFCF;"
         >
           {{ prediction }}
         </h2>

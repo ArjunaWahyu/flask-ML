@@ -37,11 +37,11 @@ def result():
         result = ValuePredictor(to_predict_list)
 
         if float(result) == 0:
-            prediction = 'Your exam is perfect'
+            prediction = 'Congrats, You Pass The Test :D'
         elif float(result) == 1:
-            prediction = 'Your exam isn\'t passed'
+            prediction = 'Your test isn\'t passed'
         elif float(result) == 2:
-            prediction = 'Your exam is passed'
+            prediction = 'Your test is passed'
 
         return render_template("result.html", prediction=prediction, name=name)
 
