@@ -2,6 +2,7 @@
   <head>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Customer Segmentation</title>
+    <link rel="icon" type="image/png" href="../static/img/result.jpg"/>
   </head>
   <body class="font-mono bg-gray-400">
     <!-- Container -->
@@ -28,18 +29,20 @@
 
         <h3 class="pt-4 text-xl text-center">Hi, {{name}} 👋.</h3>
         <h3 class="text-2xl text-center">Test Result</h3>
-        <div class="flex justify-center">
+        <!-- <div class="flex justify-center">
           <img
             src="{{ url_for('static', filename='img/result.jpg') }}"
             alt="result"
             class="w-96 mb-2"
           />
-        </div>
+        </div> -->
         <h2
-          class="text-center text-bold text-gray-700 text-xl p-4 mx-16 rounded-lg"
-          style="background-color: #FFCFCF;"
-        >
-          {{ prediction }}
+          class="text-center text-bold text-gray-700 text-xl p-4 mx-16 rounded-lg flex justify-center"
+          >
+          <div class="rounded-lg p-2 flex-wrap shadow-lg shadow-gray-500/40"
+          style="background-color: #FFCFCF;">
+            {{ prediction }}
+          </div>
         </h2>
       </div>
     </div>
