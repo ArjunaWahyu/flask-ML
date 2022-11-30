@@ -19,7 +19,7 @@ def index():
 
 # prediction function
 def ValuePredictor(to_predict_list):
-    to_predict = np.array(to_predict_list).reshape(1, 2)
+    to_predict = np.array(to_predict_list).reshape(1, 3)
     loaded_model = pickle.load(open("./model/model.pkl", "rb"))  # load the model
     # predict the values using loded model
     result = loaded_model.predict(to_predict)
@@ -29,19 +29,22 @@ def ValuePredictor(to_predict_list):
 @app.route('/result', methods=['POST'])
 def result():
     if request.method == 'POST':
+        bmi = request.form['BMI']
+        glucose = request.form['Glucose']
+        age = request.form['Age']
         name = request.form['name']
-        reading_score = request.form['reading_score']
-        writing_score = request.form['writing_score']
+        # reading_score = request.form['reading_score']
+        # writing_score = request.form['writing_score']
 
-        to_predict_list = list(map(float, [reading_score, writing_score]))
+        to_predict_list = list(map(float, [glucose, bmi, age]))
         result = ValuePredictor(to_predict_list)
 
         if float(result) == 0:
-            prediction = 'Your Exam Performance is Excellent'
+            prediction = 'Your chances of getting Diabetes are Low. Keep Healty..'
         elif float(result) == 1:
-            prediction = 'Your Exam Performance is Good'
+            prediction = 'Your chances of getting Diabetes are High. Please consult a Doctor Immediately'
         elif float(result) == 2:
-            prediction = 'Your Exam Performance is Bad'
+            prediction = 'Your chances of getting Diabetes are Medium, Please consult a Doctor'
 
         return render_template("result.html", prediction=prediction, name=name)
 

@@ -1,22 +1,13 @@
 <html>
   <head>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Test Prediction</title>
+    <title>Test Diabetes Prediction</title>
     <link rel="icon" type="image/png" href="../static/img/test.jpg"/>
 
   </head>
   <body class="font-mono bg-gray-400">
     <!-- Container -->
     <div class="container mx-auto">
-      <!-- <div class="flex justify-center px-6 my-12">
-        
-        <div class="w-full xl:w-3/4 lg:w-11/12 flex">
-          <img
-            class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg"
-            src="{{ url_for('static', filename='img/test.jpg') }}"
-          ></img>
-        </div>
-      </div> -->
       <div class="flex justify-center px-6 my-12">
           <!-- Col -->
           <!-- Col -->
@@ -32,7 +23,7 @@
                 <label
                   class="block mb-2 text-sm font-bold text-gray-700 shadow-gray-500/40"
                   for="name"
-                >
+                  >
                   Name
                 </label>
                 <input required
@@ -43,82 +34,51 @@
                   name="name"
                 />
               </div>
-              <!-- <div class="mb-4 text-gray-700">
-                <label
-                  class="block mb-2 text-sm font-bold text-gray-700"
-                  for="gender"
-                >
-                  Gender
-                </label>
-                <div class="flex items-center gap-1">
-
-                <input required
-                  class=""
-                  id="genderM"
-                  type="radio"
-                  name="gender"
-                  value="Male"
-                />
-                <label for="genderM">Male</label>
-              </div>
-
-              <div class="flex items-center gap-1">
-                <input required
-                class=""
-                id="genderF"
-                type="radio"
-                name="gender"
-                value="Female"
-                />
-                <label for="genderF">Female</label>
-              </div>
-              </div>
               <div class="mb-4">
                 <label
                   class="block mb-2 text-sm font-bold text-gray-700"
-                  for="age"
+                  for="Glucose"
                 >
-                  Age
+                  Glucose (1-100)
                 </label>
                 <input required
                   class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                  id="age"
+                  id="Glucose"
                   type="number"
-                  placeholder="Enter Age"
-                  name="age"
+                  placeholder="Enter Glucose Score"
+                  name="Glucose"
                   min="0"
-                  max="100"
                 />
-              </div> -->
+              </div>
               <div class="mb-4">
                 <label
-                  class="block mb-2 text-sm font-bold text-gray-700"
-                  for="reading_score"
+                class="block mb-2 text-sm font-bold text-gray-700"
+                for="BMI"
                 >
-                  Reading Score (1-100)
+                  BMI
                 </label>
                 <input required
                   class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                  id="reading_score"
+                  id="BMI"
                   type="number"
-                  placeholder="Enter Reading Score"
-                  name="reading_score"
+                  placeholder="Enter BMI Score"
+                  name="BMI"
                   min="0"
                 />
               </div>
               <div class="mb-4">
                 <label
                   class="block mb-2 text-sm font-bold text-gray-700"
-                  for="writing_score"
+                  for="Age"
                 >
-                  Writing Score (1-100)
+                  Age (1-100)
                 </label>
                 <input required
                   class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                  id="writing_score"
+                  id="Age"
                   type="number"
-                  placeholder="Enter Writing Score"
-                  name="writing_score"
+                  placeholder="Enter ypur Age"
+                  name="Age"
                   min="0"
                   max="100"
                 />
