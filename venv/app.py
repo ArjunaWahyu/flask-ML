@@ -19,7 +19,7 @@ def index():
 
 # prediction function
 def ValuePredictor(to_predict_list):
-    to_predict = np.array(to_predict_list).reshape(1, 3)
+    to_predict = np.array(to_predict_list).reshape(1, 5)
     loaded_model = pickle.load(open("./model/model.pkl", "rb"))  # load the model
     # predict the values using loded model
     result = loaded_model.predict(to_predict)
@@ -32,11 +32,13 @@ def result():
         bmi = request.form['BMI']
         glucose = request.form['Glucose']
         age = request.form['Age']
+        pragnancy = request.form['Pragnancies']
+        insulin = request.form['Insulin']
         name = request.form['name']
         # reading_score = request.form['reading_score']
         # writing_score = request.form['writing_score']
 
-        to_predict_list = list(map(float, [glucose, bmi, age]))
+        to_predict_list = list(map(float, [glucose, bmi, age, pragnancy, insulin]))
         result = ValuePredictor(to_predict_list)
 
         if float(result) == 0:
