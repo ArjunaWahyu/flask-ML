@@ -33,18 +33,18 @@ def result():
         glucose = request.form['Glucose']
         age = request.form['Age']
         name = request.form['name']
-        # reading_score = request.form['reading_score']
-        # writing_score = request.form['writing_score']
+        pregnancies = request.form['Pregnancies']
+        insulin = request.form['Insulin']
 
-        to_predict_list = list(map(float, [glucose, bmi, age]))
+        to_predict_list = list(map(float, [glucose, bmi, age, pregnancies, insulin]))
         result = ValuePredictor(to_predict_list)
 
         if float(result) == 0:
-            prediction = 'Your chances of getting Diabetes are Low. Keep Healty..'
+            prediction = 'Your chances of getting Diabetes are Low. Keep Healty ...'
         elif float(result) == 1:
-            prediction = 'Your chances of getting Diabetes are High. Please consult a Doctor Immediately'
+            prediction = 'Your chances of getting Diabetes are Medium. Please consult a Doctor.'
         elif float(result) == 2:
-            prediction = 'Your chances of getting Diabetes are Medium, Please consult a Doctor'
+            prediction = 'Your chances of getting Diabetes are High, Please consult a Doctor Immediately'
 
         return render_template("result.html", prediction=prediction, name=name)
 
