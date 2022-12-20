@@ -1,0 +1,14 @@
+pip install flask
+pip install numpy
+pip install -U scikit-learn
+
+$env:FLASK_APP = "./venv/app.py"
+$env:FLASK_ENV = "development"
+
+.\venv\Scripts\activate.bat
+flask run
+
+
+85	26.6	31		0
+148	33.6	50		1
+121	26.2	30		2

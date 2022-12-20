@@ -35,8 +35,6 @@ def result():
         pragnancy = request.form['Pragnancies']
         insulin = request.form['Insulin']
         name = request.form['name']
-        # reading_score = request.form['reading_score']
-        # writing_score = request.form['writing_score']
 
         to_predict_list = list(map(float, [glucose, bmi, age, pragnancy, insulin]))
         result = ValuePredictor(to_predict_list)
