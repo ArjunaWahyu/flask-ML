@@ -42,11 +42,11 @@ def result():
         result = ValuePredictor(to_predict_list)
 
         if float(result) == 0:
-            prediction = 'Your chances of getting Diabetes are Low. Keep Healty..'
+            prediction = 'Your chances of getting Diabetes are Low. Keep Healty and Stay Safe'
         elif float(result) == 1:
-            prediction = 'Your chances of getting Diabetes are High. Please consult a Doctor Immediately'
+            prediction = 'Your chances of getting Diabetes are Medium. Please consult a Doctor for further details'
         elif float(result) == 2:
-            prediction = 'Your chances of getting Diabetes are Medium, Please consult a Doctor'
+            prediction = 'Your chances of getting Diabetes are High, Please consult a Doctor Immediately'
 
         return render_template("result.html", prediction=prediction, name=name)
 
